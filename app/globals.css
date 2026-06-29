@@ -1,3 +1,52 @@
+:root {
+  --bg-primary: #060d14;
+  --bg-secondary: #0a1628;
+  --bg-sidebar: #070e17;
+  --border-color: rgba(56,189,248,0.08);
+  --border-accent: rgba(56,189,248,0.15);
+  --accent: #38bdf8;
+  --accent-bg: rgba(56,189,248,0.1);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --text-dimmer: #334155;
+  --card-bg: #0a1628;
+  --topbar-bg: rgba(6,13,20,0.9);
+  --nav-active-bg: rgba(56,189,248,0.1);
+  --nav-active-color: #38bdf8;
+  --nav-active-border: #38bdf8;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --bg-sidebar: #ffffff;
+  --border-color: #e2e8f0;
+  --border-accent: #cbd5e1;
+  --accent: #1e3d6e;
+  --accent-bg: #eaf1fb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-dimmer: #cbd5e1;
+  --card-bg: #ffffff;
+  --topbar-bg: rgba(240,244,248,0.95);
+  --nav-active-bg: #eaf1fb;
+  --nav-active-color: #1e3d6e;
+  --nav-active-border: #1e3d6e;
+}
+
+* { box-sizing: border-box; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 2px; }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+.row-hover:hover { background: var(--accent-bg); cursor: pointer; }
+
 @import "tailwindcss";
 
 :root {
