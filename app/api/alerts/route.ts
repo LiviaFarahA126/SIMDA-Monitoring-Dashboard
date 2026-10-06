@@ -23,7 +23,7 @@ export async function GET() {
     WHERE l.last_call_in < NOW() - INTERVAL '30 days'
        OR l.last_call_in IS NULL
     ORDER BY l.last_call_in ASC NULLS FIRST
-    LIMIT 20
+    LIMIT 300
   `;
 
   // 3. Data gap (site yang tidak punya data dalam 7 hari terakhir dari data terbaru)
@@ -39,7 +39,7 @@ export async function GET() {
     HAVING MAX(d.data_time) < ${maxTime}::timestamp - INTERVAL '7 days'
         OR MAX(d.data_time) IS NULL
     ORDER BY last_data_time ASC NULLS FIRST
-    LIMIT 20
+    LIMIT 300
   `;
 
   // 4. Flow anomaly (nilai channel 0 yang jauh dari rata-rata, per site)
@@ -65,7 +65,7 @@ export async function GET() {
     )
     SELECT DISTINCT ON (site_id) *
     FROM recent
-    LIMIT 15
+    LIMIT 300
   `;
 
   // 5. Pressure anomaly (channel 1)
@@ -91,7 +91,7 @@ export async function GET() {
     )
     SELECT DISTINCT ON (site_id) *
     FROM recent
-    LIMIT 15
+    LIMIT 300
   `;
 
   return NextResponse.json({
