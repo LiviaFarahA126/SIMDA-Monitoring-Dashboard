@@ -1,8 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
-import { Activity, AlertTriangle, BarChart2, Layers } from "lucide-react";
+import { Activity, AlertTriangle, BarChart2, Droplets, Layers } from "lucide-react";
 
 const NAV_ITEMS = [
   { icon: Activity,      label: "Dashboard",          href: "/" },
@@ -27,9 +26,9 @@ export default function Sidebar() {
     >
       <div className="px-5 py-4 border-b flex items-center gap-3"
         style={{ borderColor: "var(--border-color)" }}>
-        <div className="flex-shrink-0">
-          <Image src="/logo.png" alt="Perumda Tirta Manuntung" width={36} height={36}
-            style={{ objectFit: "contain" }} />
+        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+          style={{ background: "var(--accent-bg)" }}>
+          <Droplets size={18} style={{ color: "var(--accent)" }} />
         </div>
         <div className="min-w-0">
           <div className="text-sm font-bold tracking-tight leading-tight"
@@ -38,7 +37,7 @@ export default function Sidebar() {
           </div>
           <div className="text-xs leading-tight mt-0.5 truncate"
             style={{ color: "var(--accent)", opacity: 0.8 }}>
-            Tirta Manuntung
+            Monitoring Distribusi Air
           </div>
         </div>
       </div>

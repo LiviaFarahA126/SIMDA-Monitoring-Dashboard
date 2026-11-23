@@ -150,7 +150,7 @@ export default function Dashboard() {
       <main className="ml-56 flex flex-col min-h-screen">
         <Topbar
           title="Dashboard"
-          subtitle="Monitoring Overview — Jaringan Distribusi Air Balikpapan"
+          subtitle="Monitoring Overview — Jaringan Distribusi Air"
           rightContent={
             <div className="flex items-center gap-2">
               {/* Countdown + refresh */}
